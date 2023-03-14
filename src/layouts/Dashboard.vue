@@ -82,7 +82,7 @@
   <!-- sidebar -->
   <aside
     id="default-sidebar"
-    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full"
+    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform"
   >
     <div class="h-full px-3 pt-20 pb-4 overflow-y-auto bg-gray-50">
       <p class="text-base font-normal text-gray-900 my-2">SKK Migas</p>
@@ -243,16 +243,16 @@
   <!-- end sidebar -->
   <!-- content -->
   <div
-    class="pt-20 px-5 min-h-[calc(100vh-120px)] transition-all md:ml-64"
+    class="pt-20 px-5 min-h-[calc(100vh-67px)] bg-gray-100 transition-all md:ml-64"
     id="content"
   >
-    <slot />
+    <slot></slot>
   </div>
   <!-- end content -->
   <!-- footer -->
-  <footer class="px-5 md:ml-64" id="footer">
-    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-    <span class="block text-sm text-gray-500 sm:text-center"
+  <footer class="px-5 pb-6 bg-gray-100 md:ml-64" id="footer">
+    <hr class="border-gray-200 sm:mx-auto" />
+    <span class="block text-sm text-gray-500 sm:text-center mt-6"
       >© Bank BNI . All Rights Reserved.
     </span>
   </footer>

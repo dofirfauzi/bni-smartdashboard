@@ -6,5 +6,7 @@ export default {
 };
 </script>
 <template>
-  <dashboard></dashboard>
+  <Dashboard>
+    <p>Test</p>
+  </Dashboard>
 </template>
