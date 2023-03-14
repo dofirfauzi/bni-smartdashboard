@@ -1,15 +1,15 @@
 import { createWebHistory, createRouter } from "vue-router";
 
-import Login from "../page/Login.vue";
-import TotalDanaAsr from "../page/TotalDanaAsr.vue";
-import WilayahKerja from "../page/WilayahKerja.vue";
-import RekeningDanSaldo from "../page/RekeningDanSaldo.vue";
-import DaftarTransaksi from "../page/DaftarTransaksi.vue";
-import InfoSukuBunga from "../page/InfoSukuBunga.vue";
-import Mitra from "../page/Mitra.vue";
-import Users from "../page/Users.vue";
-import MyProfile from "../page/MyProfile.vue";
-import ResetPassword from "../page/ResetPassword.vue"
+import Login from "../views/Login.vue";
+import TotalDanaAsr from "../views/TotalDanaAsr.vue";
+import WilayahKerja from "../views/WilayahKerja.vue";
+import RekeningDanSaldo from "../views/RekeningDanSaldo.vue";
+import DaftarTransaksi from "../views/DaftarTransaksi.vue";
+import InfoSukuBunga from "../views/InfoSukuBunga.vue";
+import Mitra from "../views/Mitra.vue";
+import Users from "../views/Users.vue";
+import MyProfile from "../views/MyProfile.vue";
+import ResetPassword from "../views/ResetPassword.vue"
 
 const routes = [
   {
