@@ -1,4 +1,5 @@
 <script>
+import { initFlowbite } from "flowbite";
 export default {
   name: 'Dashboard',
   mounted() {
@@ -18,6 +19,7 @@ export default {
       footer.classList.toggle("md:ml-64");
     });
 
+    initFlowbite();
   }
 }
 </script>

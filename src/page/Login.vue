@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+import { initFlowbite } from "flowbite";
+
+// initialize components based on data attribute selectors
+onMounted(() => {
+  initFlowbite();
+});
+</script>
 
 <template>
   <div class="container mx-auto max-w-screen-xl p-4">
