@@ -1,6 +1,29 @@
+<script>
+export default {
+  name: 'Dashboard',
+  mounted() {
+    
+    const sideBarToggleBtn = document.getElementById("sidebar-toggle-button");
+    const sidebar = document.getElementById("default-sidebar");
+    const content = document.getElementById("content");
+    const footer = document.getElementById("footer");
+
+    if (window.screen.width >= 768) {
+      sidebar.classList.remove("-translate-x-full");
+    }
+
+    sideBarToggleBtn.addEventListener("click", function () {
+      sidebar.classList.toggle("-translate-x-full");
+      content.classList.toggle("md:ml-64");
+      footer.classList.toggle("md:ml-64");
+    });
+
+  }
+}
+</script>
 <template>
-  <!-- topbar -->
-  <nav class="bg-white px-4 py-2 fixed z-50 w-full">
+<!-- topbar -->
+<nav class="bg-white px-4 py-2 fixed z-50 w-full">
     <div class="flex flex-row justify-between items-center">
       <div class="flex flex-row">
         <!-- sidebar toggle btn -->
@@ -53,25 +76,23 @@
           </div>
           <ul class="py-2 text-sm text-gray-700">
             <li>
-              <a
-                href="my-profile.html"
+              <router-link
+                to="/my-profile"
                 class="block px-4 py-2 hover:bg-gray-100"
-                >My Profile</a
-              >
+                >My Profile</router-link>
             </li>
             <li>
-              <a
-                href="reset-password.html"
+              <router-link
+                to="/reset-password"
                 class="block px-4 py-2 hover:bg-gray-100"
-                >Reset Password</a
-              >
+                >Reset Password</router-link>
             </li>
           </ul>
           <div class="py-2">
-            <a
-              href="login.html"
+            <router-link
+              to="/"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              >Sign out</a
+              >Sign out</router-link
             >
           </div>
         </div>
@@ -82,14 +103,14 @@
   <!-- sidebar -->
   <aside
     id="default-sidebar"
-    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform"
+    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full"
   >
     <div class="h-full px-3 pt-20 pb-4 overflow-y-auto bg-gray-50">
       <p class="text-base font-normal text-gray-900 my-2">SKK Migas</p>
       <ul class="space-y-2 mb-6">
         <li>
-          <a
-            href="#"
+          <router-link
+            to="/total-dana-asr"
             class="group flex items-center p-2 text-base font-normal text-gray-900 rounded-lg bg-gray-100 hover:bg-primary-600 hover:text-white"
           >
             <svg
@@ -103,11 +124,11 @@
               <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
             </svg>
             <span class="ml-3">Total Dana ASR</span>
-          </a>
+          </router-link>
         </li>
         <li>
-          <a
-            href="#"
+          <router-link
+            to="/wilayah-kerja"
             class="group flex items-center p-2 text-base font-normal text-gray-900 rounded-lg bg-gray-100 hover:bg-primary-600 hover:text-white"
           >
             <svg
@@ -124,11 +145,11 @@
             </svg>
 
             <span class="ml-3">Wilayah Kerja</span>
-          </a>
+          </router-link>
         </li>
         <li>
-          <a
-            href="#"
+          <router-link
+            to="/rekening-dan-saldo"
             class="group flex items-center p-2 text-base font-normal text-gray-900 rounded-lg bg-gray-100 hover:bg-primary-600 hover:text-white"
           >
             <svg
@@ -145,11 +166,11 @@
               />
             </svg>
             <span class="ml-3">Rekening & Saldo</span>
-          </a>
+          </router-link>
         </li>
         <li>
-          <a
-            href="#"
+          <router-link
+            to="/daftar-transaksi"
             class="group flex items-center p-2 text-base font-normal text-gray-900 rounded-lg bg-gray-100 hover:bg-primary-600 hover:text-white"
           >
             <svg
@@ -168,11 +189,11 @@
               />
             </svg>
             <span class="ml-3">Daftar Transaksi</span>
-          </a>
+          </router-link>
         </li>
         <li>
-          <a
-            href="#"
+          <router-link
+            to="/info-suku-bunga"
             class="group flex items-center p-2 text-base font-normal text-gray-900 rounded-lg bg-gray-100 hover:bg-primary-600 hover:text-white"
           >
             <svg
@@ -189,11 +210,11 @@
             </svg>
 
             <span class="ml-3">Info Suku Bunga</span>
-          </a>
+          </router-link>
         </li>
         <li>
-          <a
-            href="#"
+          <router-link
+            to="/mitra"
             class="group flex items-center p-2 text-base font-normal text-gray-900 rounded-lg bg-gray-100 hover:bg-primary-600 hover:text-white"
           >
             <svg
@@ -213,14 +234,14 @@
             </svg>
 
             <span class="ml-3">Mitra</span>
-          </a>
+          </router-link>
         </li>
       </ul>
       <p class="text-base font-normal text-gray-900 my-2">User Management</p>
       <ul class="space-y-2 mb-6">
         <li>
-          <a
-            href="#"
+          <router-link
+            to="/users"
             class="group flex items-center p-2 text-base font-normal text-gray-900 rounded-lg bg-gray-100 hover:bg-primary-600 hover:text-white"
           >
             <svg
@@ -235,7 +256,7 @@
             </svg>
 
             <span class="ml-3">Users</span>
-          </a>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -258,3 +279,4 @@
   </footer>
   <!-- end footer -->
 </template>
+<style></style>
