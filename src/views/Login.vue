@@ -14,7 +14,7 @@ onMounted(() => {
       class="min-h-[calc(100vh-120px)] flex flex-row flex-wrap justify-center items-center"
     >
       <div class="basis-full md:basis-7/12 p-4">
-        <img class="w-full max-w-md my-4" src="img/logo.svg" alt="" />
+        <img class="w-full max-w-md my-4" src="/img/logo.svg" alt="" />
         <h1 class="text-3xl font-semibold">
           Selamat Datang di <br />BNI Smart Dashboard
         </h1>
@@ -101,12 +101,14 @@ onMounted(() => {
                 required
               />
             </div>
+            <RouterLink to="/total-dana-asr">
             <button
               type="submit"
               class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
             >
               Login
             </button>
+            </RouterLink>
           </form>
         </div>
       </div>
