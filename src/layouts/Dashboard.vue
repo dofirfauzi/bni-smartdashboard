@@ -1,9 +1,8 @@
 <script>
 import { initFlowbite } from "flowbite";
 export default {
-  name: 'Dashboard',
+  name: "Dashboard",
   mounted() {
-    
     const sideBarToggleBtn = document.getElementById("sidebar-toggle-button");
     const sidebar = document.getElementById("default-sidebar");
     const content = document.getElementById("content");
@@ -20,12 +19,12 @@ export default {
     });
 
     initFlowbite();
-  }
-}
+  },
+};
 </script>
 <template>
-<!-- topbar -->
-<nav class="bg-white px-4 py-2 fixed z-50 w-full">
+  <!-- topbar -->
+  <nav class="bg-white px-4 py-2 fixed z-40 w-full">
     <div class="flex flex-row justify-between items-center">
       <div class="flex flex-row">
         <!-- sidebar toggle btn -->
@@ -81,13 +80,15 @@ export default {
               <router-link
                 to="/my-profile"
                 class="block px-4 py-2 hover:bg-gray-100"
-                >My Profile</router-link>
+                >My Profile</router-link
+              >
             </li>
             <li>
               <router-link
                 to="/reset-password"
                 class="block px-4 py-2 hover:bg-gray-100"
-                >Reset Password</router-link>
+                >Reset Password</router-link
+              >
             </li>
           </ul>
           <div class="py-2">
@@ -105,7 +106,7 @@ export default {
   <!-- sidebar -->
   <aside
     id="default-sidebar"
-    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full"
+    class="fixed top-0 left-0 z-30 w-64 h-screen transition-transform -translate-x-full"
   >
     <div class="h-full px-3 pt-20 pb-4 overflow-y-auto bg-gray-50">
       <p class="text-base font-normal text-gray-900 my-2">SKK Migas</p>
