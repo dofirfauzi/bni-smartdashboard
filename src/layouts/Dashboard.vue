@@ -49,7 +49,7 @@ export default {
           </svg>
         </button>
         <!-- brand image -->
-        <img class="w-24" src="img/logo.svg" alt="" />
+        <img class="w-24" src="/img/logo.svg" alt="" />
       </div>
       <div>
         <!-- user dropdown toggle btn -->
@@ -62,7 +62,7 @@ export default {
           <span class="sr-only">Open user menu</span>
           <img
             class="w-8 h-8 rounded-full"
-            src="img/profile.svg"
+            src="/img/profile.svg"
             alt="user photo"
           />
         </button>
