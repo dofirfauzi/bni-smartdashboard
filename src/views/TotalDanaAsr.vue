@@ -1,8 +1,12 @@
 <script>
-import Dashboard from "../layouts/Dashboard.vue";
+import Dashboard from "../layouts/Dashboard.vue"
+import DanaAsrChart from "../components/DanaAsrChart.vue"
+import GiroDanDepositoChart from "../components/GiroDanDepositoChart.vue"
+import TrenArusDanaAsr from "../components/TrenArusDanaAsr.vue"
+import TrenBungaNetto from "../components/TrenBungaNetto.vue"
 
 export default {
-  components: { Dashboard },
+  components: { Dashboard, DanaAsrChart, GiroDanDepositoChart, TrenArusDanaAsr, TrenBungaNetto },
 };
 </script>
 <template>
@@ -85,12 +89,22 @@ export default {
         <p class="text-sm italic">Total KKKS</p>
       </div>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6 pb-6">
       <div class="bg-white hover:bg-primary-50 p-4 rounded-lg shadow-lg">
         <p>Total Dana ASR</p>
+        <DanaAsrChart/>
       </div>
       <div class="bg-white hover:bg-primary-50 p-4 rounded-lg shadow-lg">
-        <p>Total GIro & Deposito Dana ASR</p>
+        <p>Total Giro & Deposito Dana ASR</p>
+        <GiroDanDepositoChart/>
+      </div>
+      <div class="bg-white hover:bg-primary-50 p-4 rounded-lg shadow-lg">
+        <p>Tren Penerimaan & Pengeluaran Dana ASR</p>
+        <TrenArusDanaAsr/>
+      </div>
+      <div class="bg-white hover:bg-primary-50 p-4 rounded-lg shadow-lg">
+        <p>Tren Pendapatan Bunga Netto</p>
+        <TrenBungaNetto/>
       </div>
     </div>
   </Dashboard>
