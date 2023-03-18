@@ -108,7 +108,21 @@ export default {
 
       <div class="relative overflow-x-auto mt-6 pt-2">
         <div class="flex items-center justify-between pb-4">
-          <div></div>
+          <div class="flex items-center">
+            <label
+              for="show"
+              class="block mr-2 text-sm font-medium text-gray-900"
+              >Show</label
+            >
+            <select
+              id="show"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2 mr-2"
+            >
+              <option selected>10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+            </select>
+          </div>
           <label for="table-search" class="sr-only">Search</label>
           <div class="relative">
             <div
@@ -131,7 +145,7 @@ export default {
             <input
               type="text"
               id="table-search"
-              class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-secondary-800 focus:border-secondary-700 mr-1"
+              class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-secondary-800 focus:border-secondary-700 mr-1"
               placeholder="Search for items"
             />
           </div>
