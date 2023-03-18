@@ -1,12 +1,520 @@
-<script>
+<script setup>
 import Dashboard from "../layouts/Dashboard.vue";
-
-export default {
-  components: { Dashboard },
-};
 </script>
 <template>
   <Dashboard>
-    <p>Users</p>
+    <div class="bg-white rounded-lg shadow-lg p-4">
+      <div class="flex justify-between items-center">
+        <h1 class="text-xl font-semibold">Users</h1>
+        <button
+          data-modal-target="add-user-modal"
+          data-modal-toggle="add-user-modal"
+          type="button"
+          class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-5 h-5 mr-2"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Add
+        </button>
+      </div>
+      <!-- Add Mitra Modal -->
+      <div
+        id="add-user-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full"
+      >
+        <div class="relative w-full h-full max-w-3xl md:h-auto">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+            <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              data-modal-hide="add-user-modal"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+            <div class="px-6 py-6 lg:px-8">
+              <h3 class="mb-4 text-xl font-medium text-gray-900">Add User</h3>
+              <form action="#">
+                <div class="grid gap-4 grid-cols-1 md:grid-cols-2 mb-6">
+                  <div>
+                    <label
+                      for="username"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Username</label
+                    >
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                      placeholder="Username"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="name"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                      placeholder="Name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="password"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Password</label
+                    >
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="confirmPassword"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Confirm Password</label
+                    >
+                    <input
+                      type="password"
+                      name="confirmPassword"
+                      id="confirmPassword"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                      placeholder="Confirm Password"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="countries"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >Corporate</label
+                    >
+                    <select
+                      id="countries"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                    >
+                      <option selected>Choose a corporate</option>
+                      <option value="1">PT FCA</option>
+                      <option value="2">PT ABc</option>
+                      <option value="3">PT CBA</option>
+                      <option value="4">PT PPPP</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      for="wilayahKerja"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >Wilayah Kerja</label
+                    >
+                    <select
+                      id="wilayahKerja"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                    >
+                      <option selected>Choose</option>
+                      <option value="1">WK ASR BANKANAI</option>
+                      <option value="2">WK BAWEAN</option>
+                      <option value="3">WK BELIDA</option>
+                      <option value="4">WK BERAU</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      for="role"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >Role Menu</label
+                    >
+                    <select
+                      id="role"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                    >
+                      <option selected>Choose</option>
+                      <option value="1">Administrator</option>
+                      <option value="2">Staff</option>
+                    </select>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                >
+                  Add User
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- table user-->
+
+      <div class="relative overflow-x-auto mt-6 pt-2">
+        <div class="flex items-center justify-between pb-4">
+          <div class="flex items-center">
+            <label
+              for="show"
+              class="block mr-2 text-sm font-medium text-gray-900"
+              >Show</label
+            >
+            <select
+              id="show"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2 mr-2"
+            >
+              <option selected>10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+          <label for="table-search" class="sr-only">Search</label>
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="table-search"
+              class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-secondary-800 focus:border-secondary-700 mr-1"
+              placeholder="Search for items"
+            />
+          </div>
+        </div>
+        <table class="w-full text-sm text-left text-gray-500">
+          <thead class="text-md text-gray-700 uppercase bg-gray-100">
+            <tr>
+              <th scope="col" class="px-6 py-4">Username</th>
+              <th scope="col" class="px-6 py-4">Name</th>
+              <th scope="col" colspan="2" class="px-6 py-4">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white border-b hover:bg-gray-50">
+              <td class="px-6 py-4">Ronald</td>
+              <td class="px-6 py-4">Ronald</td>
+              <td class="px-6 py-4">Aktif</td>
+              <td class="px-6 py-4 text-right">
+                <button
+                  data-modal-target="edit-mitra-modal"
+                  data-modal-toggle="edit-mitra-modal"
+                  class="font-medium text-primary-600 hover:underline"
+                >
+                  Edit
+                </button>
+              </td>
+            </tr>
+            <tr class="bg-white border-b hover:bg-gray-50">
+              <td class="px-6 py-4">Rafika2021</td>
+              <td class="px-6 py-4">Rafika2021</td>
+              <td class="px-6 py-4">Aktif</td>
+              <td class="px-6 py-4 text-right">
+                <button
+                  data-modal-target="edit-mitra-modal"
+                  data-modal-toggle="edit-mitra-modal"
+                  class="font-medium text-primary-600 hover:underline"
+                >
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end table -->
+      <div
+        class="flex flex-row flex-wrap justify-between items-center mt-6 mb-1"
+      >
+        <p class="my-2">Show 10 from 125</p>
+
+        <nav aria-label="Page Pagination">
+          <ul class="inline-flex -space-x-px">
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700"
+                >Previous</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                >1</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                >2</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-current="page"
+                class="px-3 py-2 text-primary-600 border border-gray-300 bg-primary-50 hover:bg-primary-100 hover:text-primary-700"
+                >3</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                >4</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                >5</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700"
+                >Next</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Edit User modal -->
+      <div
+        id="edit-mitra-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full"
+      >
+        <div class="relative w-full h-full max-w-3xl md:h-auto">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+            <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              data-modal-hide="add-user-modal"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+            <div class="px-6 py-6 lg:px-8">
+              <h3 class="mb-4 text-xl font-medium text-gray-900">Edit User</h3>
+              <form action="#">
+                <div class="grid gap-4 grid-cols-1 md:grid-cols-2 mb-6">
+                  <div>
+                    <label
+                      for="username"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Username</label
+                    >
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      value="Ronald"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                      placeholder="Username"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="name"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      value="Ronald"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                      placeholder="Name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      value="ronald@gmail.com"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="password"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Password</label
+                    >
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="confirmPassword"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Confirm Password</label
+                    >
+                    <input
+                      type="password"
+                      name="confirmPassword"
+                      id="confirmPassword"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                      placeholder="Confirm Password"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="countries"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >Corporate</label
+                    >
+                    <select
+                      id="countries"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                    >
+                      <option selected value="1">PT FCA</option>
+                      <option value="2">PT ABc</option>
+                      <option value="3">PT CBA</option>
+                      <option value="4">PT PPPP</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      for="wilayahKerja"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >Wilayah Kerja</label
+                    >
+                    <select
+                      id="wilayahKerja"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                    >
+                      <option value="1">WK ASR BANKANAI</option>
+                      <option selected value="2">WK BAWEAN</option>
+                      <option value="3">WK BELIDA</option>
+                      <option value="4">WK BERAU</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      for="role"
+                      class="block mb-2 text-sm font-medium text-gray-900"
+                      >Role Menu</label
+                    >
+                    <select
+                      id="role"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-800 focus:border-secondary-700 block w-full p-2.5"
+                    >
+                      <option selected value="1">Administrator</option>
+                      <option value="2">Staff</option>
+                    </select>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                >
+                  Update User
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </Dashboard>
 </template>
